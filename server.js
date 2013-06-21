@@ -342,4 +342,4 @@ String.prototype.contains = function(it) { return this.indexOf(it) != -1; };
     } else {
         require('http').createServer(serve).listen(port);
     }
-}(8888));
+}(process.env.PORT||8888));
