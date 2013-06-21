@@ -1,10 +1,4 @@
 #!/usr/bin/env node
-
-String.prototype.startsWith = function(str) 
-{return (this.match("^"+str)==str)};
-
-String.prototype.contains = function(it) { return this.indexOf(it) != -1; };
-
 /*
  * jQuery File Upload Plugin Node.js Example 2.0.3
  * https://github.com/blueimp/jQuery-File-Upload
@@ -19,9 +13,11 @@ String.prototype.contains = function(it) { return this.indexOf(it) != -1; };
 /*jslint nomen: true, regexp: true, unparam: true, stupid: true */
 /*global require, __dirname, unescape, console */
 
+String.prototype.startsWith = function(str) 
+{return (this.match("^"+str)==str)};
+
 (function (port) {
-	console.log("\n\n\n\n\n >>>>>>>>>>>>>>>>>> the port here is>> "+port);
-    'use strict';
+	'use strict';
     var path = require('path'),
         fs = require('fs'),
 		sys = require('sys'),
