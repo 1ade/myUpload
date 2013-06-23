@@ -125,7 +125,7 @@ String.prototype.startsWith = function(str)
             case 'HEAD':
             case 'GET':
 			//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
-                if (req.url === '/' || !req.url.startsWith("/files/")) {
+                if (req.url === '/' ) {
                     setNoCacheHeaders();
                     if (req.method === 'GET') {
 						
