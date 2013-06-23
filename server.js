@@ -284,6 +284,7 @@ String.prototype.startsWith = function(str)
             }
         }).on('file', function (name, file) {
             var fileInfo = map[path.basename(file.path)];
+			console.log('\n\n >>> file size is'+file.size);
             fileInfo.size = file.size;
             if (!fileInfo.validate()) {
                 fs.unlink(file.path);
