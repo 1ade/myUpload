@@ -125,7 +125,7 @@ String.prototype.startsWith = function(str)
             case 'HEAD':
             case 'GET':
 			//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
-                if (req.url === '/' ) {
+                if (req.url === '/' || !req.url.startsWith("/files/")) {
                     setNoCacheHeaders();
                     if (req.method === 'GET') {
 						
@@ -256,7 +256,7 @@ String.prototype.startsWith = function(str)
         form.uploadDir = options.tmpDir;
 			
 		//>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-		form.parse(handler.req, function(err,fields, files) {
+		/*form.parse(handler.req, function(err,fields, files) {
 			
 				options.uploadDir=__dirname + '/public/files';
 				options.uploadUrl='/files/';
@@ -270,6 +270,7 @@ String.prototype.startsWith = function(str)
 				options.uploadUrl = albumUrl;
 				
 		});
+		*/
 		 //>>>>>>>>>>>>>>>>>>>>>>>>>
 		
 		form.on('fileBegin', function (name, file) {
